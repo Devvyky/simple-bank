@@ -10,7 +10,8 @@ export class UsersService {
     @InjectRepository(User)
     private readonly userRepository: Repository<User>,
   ) {}
-  create(payload: CreateUserDTO) {
-    return this.userRepository.create(payload);
+  async create(payload: CreateUserDTO) {
+    const user = this.userRepository.create(payload);
+    return this.userRepository.save(user);
   }
 }
