@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import appConfig from './config/app.config';
 import { UsersModule } from './users/users.module';
 import { WalletsModule } from './wallets/wallets.module';
+import { TransactionsModule } from './transactions/transactions.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { WalletsModule } from './wallets/wallets.module';
     }),
     UsersModule,
     WalletsModule,
+    TransactionsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -6,7 +6,7 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 
-@Entity()
+@Entity({ name: 'wallets' })
 export class Wallet {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
@@ -14,7 +14,7 @@ export class Wallet {
   @Column({ type: 'bigint' })
   balance: number;
 
-  @Column({ unique: true, length: 10 })
+  @Column({ unique: true })
   account_number: number;
 
   @Column()
