@@ -8,6 +8,7 @@ import appConfig from './config/app.config';
 import { UsersModule } from './users/users.module';
 import { WalletsModule } from './wallets/wallets.module';
 import { TransactionsModule } from './transactions/transactions.module';
+import { UtilsModule } from './utils/utils.module';
 
 @Module({
   imports: [
@@ -29,6 +30,7 @@ import { TransactionsModule } from './transactions/transactions.module';
     UsersModule,
     WalletsModule,
     TransactionsModule,
+    UtilsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

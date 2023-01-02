@@ -1,7 +1,9 @@
+import { User } from 'src/users/entities/user.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -40,7 +42,8 @@ export class Transaction {
   })
   amount: number;
 
-  //   user;
+  @ManyToOne(() => User, (user) => user.transactions)
+  user: User;
 
   @CreateDateColumn()
   created_at: Date;

@@ -11,23 +11,20 @@ export class Wallet {
   @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
-  @Column({ type: 'bigint' })
+  @Column({ type: 'bigint', default: 0 })
   balance: number;
 
   @Column({ unique: true })
-  account_number: number;
+  account_number: string;
 
   @Column()
   account_name: string;
 
   @Column()
-  bank_code: number;
+  bank_code: string;
 
   @Column()
   bank_name: string;
-
-  @Column()
-  user_id: number;
 
   @CreateDateColumn()
   created_at: Date;
