@@ -8,15 +8,18 @@ import {
 
 @Entity()
 export class User {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn({ type: 'bigint' })
   id: number;
 
-  @Column({ unique: true })
+  @Column({ unique: true, length: 50 })
   username: string;
+
+  @Column()
+  password: string;
 
   @CreateDateColumn()
   created_at: Date;
 
-  @UpdateDateColumn({ nullable: true })
+  @UpdateDateColumn()
   updated_at: Date;
 }
